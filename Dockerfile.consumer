@@ -1,0 +1,11 @@
+# FROM python:3.9
+# WORKDIR /app
+# COPY consumer.py .
+# RUN pip install confluent-kafka psycopg2-binary
+# CMD ["python", "consumer.py"]
+
+FROM python:3.9
+WORKDIR /app
+COPY consumer.py .
+RUN pip install confluent-kafka prometheus-client requests
+CMD ["python", "consumer.py"]

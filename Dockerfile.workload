@@ -1,0 +1,7 @@
+# Dockerfile.workload
+FROM python:3.9
+WORKDIR /app
+COPY workload.py .
+RUN pip install requests confluent-kafka
+CMD ["python", "workload.py"]
+
